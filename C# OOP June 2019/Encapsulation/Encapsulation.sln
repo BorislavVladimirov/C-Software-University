@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Encapsulation", "Encapsulat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonsInfo", "PersonsInfo\PersonsInfo.csproj", "{D065E8FB-7B22-49CF-B177-44C08C67AD09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassBoxData", "ClassBoxData\ClassBoxData.csproj", "{CE4B8E52-A47D-46AB-9C12-3E15878AE4E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassBoxData", "ClassBoxData\ClassBoxData.csproj", "{CE4B8E52-A47D-46AB-9C12-3E15878AE4E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{130E7E3E-09DD-47B7-B46B-6F16E129CCFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{CE4B8E52-A47D-46AB-9C12-3E15878AE4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE4B8E52-A47D-46AB-9C12-3E15878AE4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE4B8E52-A47D-46AB-9C12-3E15878AE4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130E7E3E-09DD-47B7-B46B-6F16E129CCFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130E7E3E-09DD-47B7-B46B-6F16E129CCFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130E7E3E-09DD-47B7-B46B-6F16E129CCFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130E7E3E-09DD-47B7-B46B-6F16E129CCFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
