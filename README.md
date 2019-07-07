@@ -1,2 +1,2 @@
-# C-Software-University
+# CSharp-Software-University
 Software-University Assignments and Exams
