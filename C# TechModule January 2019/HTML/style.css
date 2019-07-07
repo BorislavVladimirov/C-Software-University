@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+p{
+    font-size: 20px;
+    color: firebrick;
+    font-style: italic;
+    font-weight: 900;
+    font-family: Open Sans Condensed;
+    border: 1px solid coral;
+    border-radius: 120px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background: url(mini.jpg);
+}
