@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CustomStructures</name>
+    </assembly>
+    <members>
+        <member name="T:CustomStructures.CustomList`1">
+            <summary>
+            Integer List
+            </summary>
+        </member>
+        <member name="F:CustomStructures.CustomList`1.defaultSize">
+            <summary>
+            Default size of internal array
+            </summary>
+        </member>
+        <member name="F:CustomStructures.CustomList`1.innerArr">
+            <summary>
+            Internal array
+            </summary>
+        </member>
+        <member name="P:CustomStructures.CustomList`1.Count">
+            <summary>
+            Number of elements int he list 
+            </summary>
+        </member>
+        <member name="M:CustomStructures.CustomList`1.#ctor">
+            <summary>
+            Creates custom integer list with defaut size
+            </summary>
+        </member>
+        <member name="M:CustomStructures.CustomList`1.#ctor(System.Int32)">
+            <summary>
+            Creates custom integer list with defaut size
+            </summary>
+            <param name="initialSize">Initial size of the list </param>
+        </member>
+        <member name="M:CustomStructures.CustomList`1.RemoveAt(System.Int32)">
+            <summary>
+            Removes element at position
+            </summary>
+            <param name="index">position</param>
+            <exception cref="T:System.IndexOutOfRangeException"></exception>
+        </member>
+    </members>
+</doc>
