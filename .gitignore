@@ -8,17 +8,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.7z
-*.jar
-*.rar
-*.zip
-*.gz
-*.tgz
-*.bzip
-*.bz2
-*.xz
-*.lzma
-*.cab
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -230,6 +219,17 @@ ClientBin/
 *.jfm
 *.pfx
 *.publishsettings
+*.7z
+*.jar
+*.rar
+*.zip
+*.gz
+*.tgz
+*.bzip
+*.bz2
+*.xz
+*.lzma
+*.cab
 orleans.codegen.cs
 
 # Including strong name files can present a security risk 
