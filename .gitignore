@@ -8,6 +8,17 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.7z
+*.jar
+*.rar
+*.zip
+*.gz
+*.tgz
+*.bzip
+*.bz2
+*.xz
+*.lzma
+*.cab
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
