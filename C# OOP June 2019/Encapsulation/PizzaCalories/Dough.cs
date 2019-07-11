@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using PizzaCalories.DifferentExceptions;
 
 namespace PizzaCalories
 {
@@ -18,15 +17,61 @@ namespace PizzaCalories
             this.BakingTechnique = bakingTechnique;
         }
 
-        public double Weight { get; set; }
+        public double Weight
+        {
+            get => this.weight;
 
-        public string FlourType { get; set; }
+            private set
+            {
+                if (value < 1 || value > 200)
+                {
+                    throw new ArgumentException(ExceptionMessages.InvalidWeight);
+                }
 
-        public string BakingTechnique { get; set; }
+                this.weight = value;
+            }
+        }
 
-        public double Calories => this.calories;
+        public string FlourType
+        {
+            get => this.flourType;
 
-        public void GetTotalCalories()
+            private set
+            {
+                if (value.ToLower() != "white" && value.ToLower() != "wholegrain")
+                {
+                    throw new ArgumentException(ExceptionMessages.InvalidDough);
+                }
+
+                this.flourType = value;
+            }
+
+        }
+
+        public string BakingTechnique
+        {
+            get => this.bakingTechnique;
+
+            private set
+            {
+                if (value.ToLower() != "crispy" && value.ToLower() != "chewy" && value.ToLower() != "homemade")
+                {
+                    throw new ArgumentException(ExceptionMessages.InvalidDough);
+                }
+
+                this.bakingTechnique = value;
+            }
+        }
+
+        public double Calories
+        {
+            get
+            {
+                return this.calories;
+            }
+        }
+
+        public void TotalCalories()
         {
             if (this.flourType.ToLower() == "white")
             {
@@ -34,7 +79,7 @@ namespace PizzaCalories
             }
             else
             {
-                this.calories = 2 * this.Weight * 1.0;
+                this.calories = 2 * this.weight * 1.0;
             }
 
             switch (this.bakingTechnique.ToLower())
@@ -45,7 +90,7 @@ namespace PizzaCalories
                 case "chewy":
                     this.calories *= 1.1;
                     break;
-                case "homemade":
+                case "  ":
                     this.calories *= 1.0;
                     break;
             }
