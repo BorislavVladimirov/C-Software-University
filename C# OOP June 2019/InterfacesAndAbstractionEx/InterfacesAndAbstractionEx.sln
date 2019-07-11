@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonInfo", "PersonInfo\Pe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ferrari", "Ferrari\Ferrari.csproj", "{0DCD5EA4-2FD4-426A-AC0B-BC67088C7701}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telephony", "Telephony\Telephony.csproj", "{6D100D05-DB12-4712-B9F9-34DB95855585}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telephony", "Telephony\Telephony.csproj", "{6D100D05-DB12-4712-B9F9-34DB95855585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BorderControl", "BorderControl\BorderControl.csproj", "{285A67EE-93D9-4AD6-8DEA-32236EE556C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BorderControl", "BorderControl\BorderControl.csproj", "{285A67EE-93D9-4AD6-8DEA-32236EE556C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars", "Cars\Cars.csproj", "{6E88CA58-5145-46A2-9A7E-5571C29B6F88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{285A67EE-93D9-4AD6-8DEA-32236EE556C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{285A67EE-93D9-4AD6-8DEA-32236EE556C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{285A67EE-93D9-4AD6-8DEA-32236EE556C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E88CA58-5145-46A2-9A7E-5571C29B6F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E88CA58-5145-46A2-9A7E-5571C29B6F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E88CA58-5145-46A2-9A7E-5571C29B6F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E88CA58-5145-46A2-9A7E-5571C29B6F88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

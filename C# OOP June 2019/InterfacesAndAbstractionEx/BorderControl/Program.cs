@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using BorderControl.Interfaces;
+using BorderControl.Models;
 
 namespace BorderControl
 {
@@ -7,44 +10,58 @@ namespace BorderControl
     {
         public static void Main(string[] args)
         {
-            string input = Console.ReadLine();
-            List<IIdentifiable> result = new List<IIdentifiable>();
+            int n = int.Parse(Console.ReadLine());
+            List<IBuyer> result = new List<IBuyer>();
 
-            while (input != "End")
+            for (int i = 0; i < n; i++)
             {
-                string[] tempArr = input.Split();
+                string[] input = Console.ReadLine().Split();
 
-                switch (tempArr.Length)
+                switch (input.Length)
                 {
-                    case 2:
-                        string model = tempArr[0];
-                        string robotId = tempArr[1];
+                    case 4:
+                        string name = input[0];
+                        string age = input[1];
+                        string id = input[2];
+                        string birthdate = input[3];
 
-                        Robot robot = new Robot(model, robotId);
-                        result.Add(robot);
-                        break;
-                    case 3:
-                        string name = tempArr[0];
-                        string age = tempArr[1];
-                        string id = tempArr[2];
-
-                        Citizen citizen = new Citizen(name, age, id);
+                        Citizen citizen = new Citizen(name, age, id, birthdate);
                         result.Add(citizen);
                         break;
+                    case 3:
+                        string rebelName = input[0];
+                        string rebelAge = input[1];
+                        string rebelGroup = input[2];
+
+                        Rebel rebel = new Rebel(rebelName, rebelAge, rebelGroup);
+                        result.Add(rebel);
+                        break;
                 }
-                
-                input = Console.ReadLine();
             }
 
-            string idToCheck = Console.ReadLine();
+            string command = Console.ReadLine();
+
+            while (command != "End")
+            {
+                string name = command;
+
+                if (result.Any(x => x.Name == name))
+                {
+                    IBuyer item = result.FirstOrDefault(x => x.Name == name);
+                    item.BuyFood();
+                }
+
+                command = Console.ReadLine();
+            }
+
+            int sum = 0;
 
             foreach (var item in result)
             {
-                if (item.Id.EndsWith(idToCheck))
-                {
-                    Console.WriteLine(item.Id);
-                }
+                sum += item.Food;
             }
+
+            Console.WriteLine(sum);
         }
     }
 }

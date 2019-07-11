@@ -4,10 +4,8 @@ using System.Text;
 
 namespace BorderControl.Interfaces
 {
-    interface IBirthtable : INameable
+    public interface IAgeable
     {
-        string Name { get; }
-
-        string Birthdate { get; }
+        string Age { get; }
     }
 }

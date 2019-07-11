@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BorderControl.Interfaces
 {
-    interface IBirthtable : INameable
+    public interface IBuyer : INameable
     {
-        string Name { get; }
+        void BuyFood();
 
-        string Birthdate { get; }
+        int Food { get; }
     }
 }
