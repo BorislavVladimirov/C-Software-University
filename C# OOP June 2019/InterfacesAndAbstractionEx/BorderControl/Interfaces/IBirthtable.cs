@@ -6,5 +6,8 @@ namespace BorderControl.Interfaces
 {
     interface IBirthtable
     {
+        string Name { get; }
+
+        string Birthdate { get; }
     }
 }
