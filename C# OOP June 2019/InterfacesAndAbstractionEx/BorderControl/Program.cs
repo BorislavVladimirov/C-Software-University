@@ -54,14 +54,7 @@ namespace BorderControl
                 command = Console.ReadLine();
             }
 
-            int sum = 0;
-
-            foreach (var item in result)
-            {
-                sum += item.Food;
-            }
-
-            Console.WriteLine(sum);
+            Console.WriteLine(result.Sum(x => x.Food));
         }
     }
 }
