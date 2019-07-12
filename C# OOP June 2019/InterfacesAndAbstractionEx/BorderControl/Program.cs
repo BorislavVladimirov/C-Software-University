@@ -38,7 +38,7 @@ namespace BorderControl
                         break;
                 }
             }
-
+            
             string command = Console.ReadLine();
 
             while (command != "End")
