@@ -1,5 +1,4 @@
-﻿namespace Telecom
-{
+﻿
     using System;
     using System.Collections.Generic;
 
@@ -69,4 +68,3 @@
             return $"Calling {name} - {number}...";
         }
     }
-}
