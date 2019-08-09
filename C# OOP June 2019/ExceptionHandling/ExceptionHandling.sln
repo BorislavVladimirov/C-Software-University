@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquareRoot", "SquareRoot\SquareRoot.csproj", "{10E31D25-2EA8-4CD9-B4FA-D989C35B292E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterNumbers", "EnterNumbers\EnterNumbers.csproj", "{C0F9FACC-8BC5-488F-BE29-BA020506F23C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10E31D25-2EA8-4CD9-B4FA-D989C35B292E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E31D25-2EA8-4CD9-B4FA-D989C35B292E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E31D25-2EA8-4CD9-B4FA-D989C35B292E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E31D25-2EA8-4CD9-B4FA-D989C35B292E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0F9FACC-8BC5-488F-BE29-BA020506F23C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0F9FACC-8BC5-488F-BE29-BA020506F23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0F9FACC-8BC5-488F-BE29-BA020506F23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F9FACC-8BC5-488F-BE29-BA020506F23C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D4DCF67-5513-452A-9476-210532B7EE01}
+	EndGlobalSection
+EndGlobal

@@ -3,7 +3,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-
 public class Spy
 {
     public string StealFieldInfo(string investigatedClass, params string[] fieldsName)
