@@ -58,7 +58,7 @@ namespace SpaceStation.Models.Astronauts
 
         public virtual void Breath()
         {
-            if (this.Oxygen - PointsToDecrease > 0)
+            if (this.Oxygen - PointsToDecrease >= 0)
             {
                 this.Oxygen -= PointsToDecrease;
             }

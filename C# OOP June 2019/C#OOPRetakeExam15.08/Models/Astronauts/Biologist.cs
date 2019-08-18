@@ -16,7 +16,7 @@ namespace SpaceStation.Models.Astronauts
 
         public override void Breath()
         {
-            if (this.Oxygen - OxygenDecrease > 0)
+            if (this.Oxygen - OxygenDecrease >= 0)
             {
                 base.Oxygen -= OxygenDecrease;
             }

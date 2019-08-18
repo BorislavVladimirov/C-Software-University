@@ -21,13 +21,16 @@ namespace SpaceStation.Core
         }
         public void Run()
         {
+            StringBuilder sb = new StringBuilder();
+
             while (true)
             {
                 var input = reader.ReadLine().Split();
 
                 if (input[0] == "Exit")
                 {
-                    Environment.Exit(0);
+                    //Environment.Exit(0);
+                    writer.Write(sb.ToString().ToString().TrimEnd());
                 }
                 try
                 {
@@ -35,7 +38,7 @@ namespace SpaceStation.Core
                     {
                         string type = input[1];
                         string name = input[2];
-                        writer.WriteLine(controller.AddAstronaut(type, name));
+                        sb.AppendLine(controller.AddAstronaut(type, name));
                     }
                     else if (input[0] == "AddPlanet")
                     {
@@ -47,26 +50,26 @@ namespace SpaceStation.Core
                             items[i - 2] = input[i];
                         }
 
-                        writer.WriteLine(controller.AddPlanet(planetName, items));
+                        sb.AppendLine(controller.AddPlanet(planetName, items));
                     }
                     else if (input[0] == "RetireAstronaut")
                     {
                         string nameToRetire = input[1];
-                        writer.WriteLine(controller.RetireAstronaut(nameToRetire));
+                        sb.AppendLine(controller.RetireAstronaut(nameToRetire));
                     }
                     else if (input[0] == "ExplorePlanet")
                     {
                         string planetName = input[1];
-                        writer.WriteLine(controller.ExplorePlanet(planetName));
+                        sb.AppendLine(controller.ExplorePlanet(planetName));
                     }
                     else if (input[0] == "Report")
                     {
-                        writer.WriteLine(controller.Report());
+                        sb.AppendLine(controller.Report());
                     }
                 }
                 catch (Exception ex)
                 {
-                    writer.WriteLine(ex.Message);
+                    sb.AppendLine(ex.Message);
                 }
             }
         }

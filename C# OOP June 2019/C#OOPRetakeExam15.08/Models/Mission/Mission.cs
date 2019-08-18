@@ -13,21 +13,16 @@ namespace SpaceStation.Models.Mission
         {
             foreach (var astronaut in astronauts)
             {
-                if (astronaut.CanBreath)
+                while (planet.Items.Any() && astronaut.CanBreath)
                 {
-                    while (planet.Items.Any())
-                    {
-                        var item = planet.Items.First();
+                    var item = planet.Items.First();
 
-                        if (astronaut.CanBreath)
-                        {
-                            astronaut.Breath();
-                            astronaut.Bag.Items.Add(item);
+                    astronaut.Breath();
+                    astronaut.Bag.Items.Add(item);
 
-                            planet.Items.Remove(item);
-                        }
-                    }
+                    planet.Items.Remove(item);
                 }
+
             }
         }
     }

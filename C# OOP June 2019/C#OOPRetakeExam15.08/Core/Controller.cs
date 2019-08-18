@@ -92,9 +92,10 @@ namespace SpaceStation.Core
 
             sb.AppendLine($"{exploredPlanetsCount} planets were explored!");
 
+            sb.AppendLine("Astronauts info:");
+
             foreach (var astronaut in this.astronautRepository.Models)
             {
-                sb.AppendLine("Astronauts info:");
                 sb.AppendLine($"Name: {astronaut.Name}");
                 sb.AppendLine($"Oxygen: {astronaut.Oxygen}");
 
