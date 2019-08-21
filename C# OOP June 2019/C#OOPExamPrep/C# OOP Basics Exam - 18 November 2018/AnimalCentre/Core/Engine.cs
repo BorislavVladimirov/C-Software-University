@@ -61,19 +61,19 @@ namespace AnimalCentre.Core
                             break;
                         case "Play":
                             this.name = arr[1];
-                            this.procedureTime = int.Parse(arr[1]);
+                            this.procedureTime = int.Parse(arr[2]);
 
                             Console.WriteLine(this.animalCentre.Play(this.name, this.procedureTime));
                             break;
                         case "DentalCare":
                             this.name = arr[1];
-                            this.procedureTime = int.Parse(arr[1]);
+                            this.procedureTime = int.Parse(arr[2]);
 
                             Console.WriteLine(this.animalCentre.DentalCare(this.name, this.procedureTime));
                             break;
                         case "NailTrim":
                             this.name = arr[1];
-                            this.procedureTime = int.Parse(arr[1]);
+                            this.procedureTime = int.Parse(arr[2]);
 
                             Console.WriteLine(this.animalCentre.NailTrim(this.name, this.procedureTime));
                             break;
@@ -86,6 +86,7 @@ namespace AnimalCentre.Core
                         case "History":
                             string procedureType = arr[1];
 
+                            Console.WriteLine(procedureType);
                             Console.WriteLine(this.animalCentre.History(procedureType));
                             break;
                     }
@@ -106,10 +107,11 @@ namespace AnimalCentre.Core
                 command = Console.ReadLine();
             }
 
-            foreach (var animal in this.animalCentre.Animals.Where(a => a.IsAdopt == true).OrderBy(a => a.Owner))
+            foreach (var owner in this.animalCentre.AdoptedAnimals)
             {
-                Console.WriteLine($"--Owner: {animal.Owner}");
-                Console.WriteLine($"    -Adopted animals: {animal.Name}");
+                Console.WriteLine($"--Owner: {owner.Key}");
+
+                Console.WriteLine($"    - Adopted animals: {string.Join(" ", owner.Value.Select(x => x.Name).ToList())}");
             }
         }
     }

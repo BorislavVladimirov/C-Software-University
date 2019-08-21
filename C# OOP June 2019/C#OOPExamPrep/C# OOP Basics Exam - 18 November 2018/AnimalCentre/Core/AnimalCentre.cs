@@ -15,15 +15,16 @@ namespace AnimalCentre.Core
         IProcedure procedure;
         IAnimal animal;
         private List<IProcedure> procedures;
-        private List<IAnimal> animals;
 
         public AnimalCentre()
         {
             this.hotel = new Hotel();
             this.procedures = new List<IProcedure>();
-            this.animals = new List<IAnimal>();
+            this.AdoptedAnimals = new SortedDictionary<string, List<IAnimal>>();
         }
-        
+
+        public SortedDictionary<string, List<IAnimal>> AdoptedAnimals { get; set; }
+
         public string RegisterAnimal(string type, string name, int energy, int happiness, int procedureTime)
         {
             IAnimal animal = null;
@@ -56,12 +57,15 @@ namespace AnimalCentre.Core
                 throw new ArgumentException($"Animal {name} does not exist");
             }
 
-            this.procedure = new Chip();
+            this.procedure = this.procedures.FirstOrDefault(x => x.GetType().Name == "Chip");
+
+            if (procedure == null)
+            {
+                this.procedure = new Chip();
+                this.procedures.Add(procedure);
+            }
+
             this.animal = this.hotel.Animals.First(a => a.Key == name).Value;
-
-            this.animals.Add(animal);
-
-            this.procedures.Add(procedure);
 
             this.procedure.DoService(this.animal, procedureTime);
 
@@ -75,12 +79,15 @@ namespace AnimalCentre.Core
                 throw new ArgumentException($"Animal {name} does not exist");
             }
 
-            this.procedure = new Vaccinate();
+            this.procedure = this.procedures.FirstOrDefault(x => x.GetType().Name == "Vaccinate");
+
+            if (procedure == null)
+            {
+                this.procedure = new Vaccinate();
+                this.procedures.Add(procedure);
+            }
+
             this.animal = this.hotel.Animals.First(a => a.Key == name).Value;
-
-            this.animals.Add(animal);
-
-            this.procedures.Add(procedure);
 
             this.procedure.DoService(this.animal, procedureTime);
 
@@ -94,13 +101,16 @@ namespace AnimalCentre.Core
                 throw new ArgumentException($"Animal {name} does not exist");
             }
 
-            this.procedure = new Fitness();
+            this.procedure = this.procedures.FirstOrDefault(x => x.GetType().Name == "Fitness");
+
+            if (procedure == null)
+            {
+                this.procedure = new Fitness();
+                this.procedures.Add(procedure);
+            }
+
             this.animal = this.hotel.Animals.First(a => a.Key == name).Value;
 
-            this.animals.Add(animal);
-
-            this.procedures.Add(procedure);
-            
             this.procedure.DoService(this.animal, procedureTime);
 
             return $"{this.animal.Name} had fitness procedure";
@@ -113,13 +123,16 @@ namespace AnimalCentre.Core
                 throw new ArgumentException($"Animal {name} does not exist");
             }
 
-            this.procedure = new Play();
+            this.procedure = this.procedures.FirstOrDefault(x => x.GetType().Name == "Play");
+
+            if (procedure == null)
+            {
+                this.procedure = new Play();
+                this.procedures.Add(procedure);
+            }
+
             this.animal = this.hotel.Animals.First(a => a.Key == name).Value;
 
-            this.animals.Add(animal);
-
-            this.procedures.Add(procedure);
-            
             this.procedure.DoService(this.animal, procedureTime);
 
             return $"{this.animal.Name} was playing for {procedureTime} hours";
@@ -132,13 +145,16 @@ namespace AnimalCentre.Core
                 throw new ArgumentException($"Animal {name} does not exist");
             }
 
-            this.procedure = new DentalCare();
+            this.procedure = this.procedures.FirstOrDefault(x => x.GetType().Name == "DentalCare");
+
+            if (procedure == null)
+            {
+                this.procedure = new DentalCare();
+                this.procedures.Add(procedure);
+            }
+
             this.animal = this.hotel.Animals.First(a => a.Key == name).Value;
 
-            this.animals.Add(animal);
-
-            this.procedures.Add(procedure);
-            
             this.procedure.DoService(this.animal, procedureTime);
 
             return $"{this.animal.Name} had dental care procedure";
@@ -151,12 +167,15 @@ namespace AnimalCentre.Core
                 throw new ArgumentException($"Animal {name} does not exist");
             }
 
-            this.procedure = new NailTrim();
+            this.procedure = this.procedures.FirstOrDefault(x => x.GetType().Name == "NailTrim");
+
+            if (procedure == null)
+            {
+                this.procedure = new NailTrim();
+                this.procedures.Add(procedure);
+            }
+
             this.animal = this.hotel.Animals.First(a => a.Key == name).Value;
-
-            this.animals.Add(animal);
-
-            this.procedures.Add(procedure);
 
             this.procedure.DoService(this.animal, procedureTime);
 
@@ -172,7 +191,16 @@ namespace AnimalCentre.Core
 
             this.animal = this.hotel.Animals.First(a => a.Key == animalName).Value;
 
-            this.animals.Add(animal);
+            if (!this.AdoptedAnimals.ContainsKey(owner))
+            {
+                this.AdoptedAnimals.Add(owner, new List<IAnimal>());
+                this.AdoptedAnimals[owner].Add(animal);
+            }
+            else
+            {
+                this.AdoptedAnimals[owner].Add(animal);
+            }
+
 
             hotel.Adopt(this.animal.Name, owner);
 
@@ -189,9 +217,7 @@ namespace AnimalCentre.Core
         {
             IProcedure currentProcedure = this.procedures.FirstOrDefault(p => p.GetType().Name == type);
 
-            return this.procedure.History();
+            return currentProcedure.History();
         }
-
-        public List<IAnimal> Animals => this.animals;
     }
 }

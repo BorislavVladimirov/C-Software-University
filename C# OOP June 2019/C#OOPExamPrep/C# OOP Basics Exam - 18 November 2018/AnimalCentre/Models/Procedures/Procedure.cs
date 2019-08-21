@@ -25,14 +25,12 @@ namespace AnimalCentre.Models.Procedures
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"{this.GetType().Name}");
-
             foreach (var animal in this.ProcedureHistory)
             {
-                sb.AppendLine($"    - {animal.Name} - Happiness: {animal.Happiness} - Energy: {animal.Energy}");
+                sb.AppendLine($"    Animal type: {animal.GetType().Name} - {animal.Name} - Happiness: {animal.Happiness} - Energy: {animal.Energy}");
             }
 
-            return sb.ToString().Trim();
+            return sb.ToString().TrimEnd();
         }
     }
 }

@@ -39,11 +39,6 @@ namespace AnimalCentre.Models
 
         public void Adopt(string animalName, string owner)
         {
-            if (!this.animals.Any(a => a.Key == animalName))
-            {
-                throw new ArgumentException($"Animal {animalName} does not exist");
-            }
-
             IAnimal animal = this.animals.First(a => a.Key == animalName).Value;
 
             animal.Owner = owner;
